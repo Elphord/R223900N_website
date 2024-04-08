@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elly_Closet</title>
+  <link rel="stylesheet" href="smart.css">
+</head>
+<body>
+  <h1>E-Commerce Content Management System</h1>
+  <nav>
+    <ul>
+      <li><a href="smart.php">Home</a></li>
+      <li><a href="clothes.html">Products</a></li>
+      <li><a href="register.php">Register</a></li>
+      <li><a href="login.php">Login</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <?php
+      if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+      } else {
+        $page = 'home';
+      }
+
+      switch ($page) {
+        case 'home':
+          include 'home.php';
+          break;
+        case 'products':
+          include 'products.php';
+          break;
+        case 'register':
+          include 'register.php';
+          break;
+        case 'login':
+          include 'login.php';
+          break;
+      }
+    ?>
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2023 E-Commerce Content Management System</p>
+  </footer>
+</body>
+</html>
